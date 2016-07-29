@@ -1,4 +1,4 @@
-//2.模拟实现strstr函数
+//1.模拟实现strstr函数
 char *strstr(const char*str1, const char*str2)
 {
     int n=0;
@@ -19,7 +19,7 @@ char *strstr(const char*str1, const char*str2)
 		return (char*)str1;
 }
 
-//3。模拟实现strncat函数
+//2.拟实现strncat函数
 char *mystrcat(char *str1, const char *str2)
 {
 	int i=0;
