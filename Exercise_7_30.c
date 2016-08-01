@@ -1,29 +1,33 @@
 //1
-char* strrev(char* str)
+char* Strrev(char* str)
 {
-    int length=strlen(str);
-    char prior = *str;
-    *(str)=*(str+length-1);
-    *(str+length-1)='\0';
-    strrev(str+1);
-    *(str+length-1)=prior;
-    return str;
+	int length = strlen(str);
+	char prior = *str;
+	if (length >= 2) {
+		*(str) = *(str + length - 1);
+		*(str + length - 1) = '\0';
+		Strrev(str + 1);
+		*(str + length - 1) = prior;
+		return str;
+	}
+	return str;
 }
 
 //2
-int Max(int n,...)
+int Max(int n, ...)
 {
-	int i=0;
+	int i = 0;
 	int Max = 0;
+	int cmp;
 	va_list arg;
-    va_start ( arg, n );
-    Max = va_vrg(arg,n);
-	for( i=1; i<n; i++ )
-    {
-        cmp = va_vrg ( arg, n );
-        if(cmp>Max)
-            Max=cmp
-	}	
+	va_start(arg, n);
+	Max = va_arg(arg, int);
+	for (i = 1; i<n; i++)
+	{
+		cmp = va_arg(arg, int);
+		if (cmp > Max)
+			Max = cmp;
+	}
 	va_end(arg);
 	return Max;
 }
